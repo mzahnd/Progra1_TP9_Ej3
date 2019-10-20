@@ -47,8 +47,8 @@ suma_digitos(int n1);
 int
 main(void)
 {
-    int ans = suma_digitos(15);
-    printf("%d", ans);
+    int num = 1234;
+    printf("%d", suma_digitos(num));
 
     return (EXIT_SUCCESS);
 }
@@ -56,5 +56,12 @@ main(void)
 int
 suma_digitos(int n1)
 {
-    return ((n1 % 10) + digitos(n1 / 10)); //caso recursivo
+    // Caso base
+    if(n1 == 0)
+    {
+        return 0;
+    }
+
+    // Caso recursivo
+    return ((n1 % 10) + suma_digitos(n1 / 10));
 }
